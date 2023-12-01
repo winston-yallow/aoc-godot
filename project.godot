@@ -22,6 +22,7 @@ enabled=PackedStringArray("res://addons/aoc/plugin.cfg")
 
 folder_colors={
 "res://addons/": "red",
-"res://data/": "teal",
-"res://days/": "teal"
+"res://data-inputs/": "teal",
+"res://data-outputs/": "teal",
+"res://solvers/": "teal"
 }

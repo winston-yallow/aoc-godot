@@ -5,9 +5,9 @@ extends PanelContainer
 signal filesystem_changed()
 
 
-const PATH_TEMPLATE_SCRIPT := "res://days/%02d.gd"
-const PATH_TEMPLATE_INPUT := "res://data/%02d-input.txt"
-const PATH_TEMPLATE_OUTPUT := "res://data/%02d-output-%d.txt"
+const PATH_TEMPLATE_SCRIPT := "res://solvers/%02d.gd"
+const PATH_TEMPLATE_INPUT := "res://data-inputs/%02d-data.txt"
+const PATH_TEMPLATE_OUTPUT := "res://data-outputs/%02d-part-%d.txt"
 
 const SCRIPT_TEMPLATE = """extends Day
 
