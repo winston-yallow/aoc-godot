@@ -1,0 +1,123 @@
+[gd_scene load_steps=2 format=3 uid="uid://cut7wodian2wf"]
+
+[ext_resource type="Script" path="res://addons/aoc/dock.gd" id="1_kxl4r"]
+
+[node name="AoC" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kxl4r")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MainVBox" type="VBoxContainer" parent="ScrollContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/MainVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Advent of Code"
+horizontal_alignment = 1
+
+[node name="SetupPanel" type="PanelContainer" parent="ScrollContainer/MarginContainer/MainVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer/MainVBox/SetupPanel"]
+layout_mode = 2
+
+[node name="RunTitle" type="Label" parent="ScrollContainer/MarginContainer/MainVBox/SetupPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Setup"
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer/MarginContainer/MainVBox/SetupPanel/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="DayLabel" type="Label" parent="ScrollContainer/MarginContainer/MainVBox/SetupPanel/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 5
+text = "Day"
+
+[node name="Day" type="SpinBox" parent="ScrollContainer/MarginContainer/MainVBox/SetupPanel/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 24.0
+value = 1.0
+rounded = true
+select_all_on_focus = true
+
+[node name="OverrideLabel" type="Label" parent="ScrollContainer/MarginContainer/MainVBox/SetupPanel/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 5
+text = "Input"
+
+[node name="Override" type="TextEdit" parent="ScrollContainer/MarginContainer/MainVBox/SetupPanel/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "overrides input data
+(uses file if blank)"
+
+[node name="ActionsPanel" type="PanelContainer" parent="ScrollContainer/MarginContainer/MainVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer/MainVBox/ActionsPanel"]
+layout_mode = 2
+
+[node name="ActionsTitle" type="Label" parent="ScrollContainer/MarginContainer/MainVBox/ActionsPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Actions"
+
+[node name="Initialize" type="Button" parent="ScrollContainer/MarginContainer/MainVBox/ActionsPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Initialize Day"
+
+[node name="Run1" type="Button" parent="ScrollContainer/MarginContainer/MainVBox/ActionsPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Run Part 1"
+
+[node name="Run2" type="Button" parent="ScrollContainer/MarginContainer/MainVBox/ActionsPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Run Part 2"
+
+[node name="ResultsPanel" type="PanelContainer" parent="ScrollContainer/MarginContainer/MainVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer/MainVBox/ResultsPanel"]
+layout_mode = 2
+
+[node name="ResultsTitle" type="Label" parent="ScrollContainer/MarginContainer/MainVBox/ResultsPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Results"
+
+[node name="Results" type="RichTextLabel" parent="ScrollContainer/MarginContainer/MainVBox/ResultsPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Choose an action first"
+fit_content = true
+
+[node name="Copy" type="Button" parent="ScrollContainer/MarginContainer/MainVBox/ResultsPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Copy"
