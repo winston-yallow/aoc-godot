@@ -21,6 +21,9 @@ func solve_second(input: String) -> String:
 """
 
 
+var _last_run_day := 0
+var _last_run_part := 0
+
 @onready var _main_vbox: VBoxContainer = $ScrollContainer/MarginContainer/MainVBox
 @onready var _margin_container: MarginContainer = %MarginContainer
 @onready var _btn_initialize: Button = %Initialize
@@ -81,6 +84,12 @@ func setup() -> void:
 	)
 
 
+func run_active_solver() -> void:
+	var day = int(_input_day.value)
+	var part = 1 if _last_run_day != day else _last_run_part
+	_run(day, part, _get_input(day))
+
+
 func _get_input(day: int) -> String:
 	if not _input_data.text.strip_edges().is_empty():
 		return _input_data.text
@@ -138,6 +147,10 @@ func _initialize(day: int, input_data: String) -> void:
 
 func _run(day: int, part: int, input: String) -> void:
 	var notes: Array[Dictionary] = []
+	
+	_last_run_day = day
+	_last_run_part = part
+	print('Running solver for day %s part %s' % [day, part])
 	
 	input = input.strip_edges()
 	if input.is_empty():
