@@ -44,6 +44,7 @@ func solve_first(input: String) -> String:
 
 
 func solve_second(input: String) -> String:
+	var sum := 0
 	var cards := parse(input)
 	for idx in cards.size():
 		var card := cards[idx]
@@ -51,4 +52,5 @@ func solve_second(input: String) -> String:
 		for lookahead in range(idx + 1, idx + matches + 1):
 			var future_card := cards[lookahead]
 			future_card.instances += card.instances
-	return str(cards.reduce(func(acc, card): return acc + card.instances, 0))
+		sum += card.instances
+	return str(sum)
